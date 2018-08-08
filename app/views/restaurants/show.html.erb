@@ -1,0 +1,39 @@
+<div class="container">
+
+
+
+  <ul class="list-group"><%= notice %>
+
+    <li class="list-group-item">
+      <strong>Name:</strong>
+      <%= @restaurant.name %>
+    </li>
+
+    <li class="list-group-item">
+      <strong>Address:</strong>
+      <%= @restaurant.address %>
+    </li>
+
+    <li class="list-group-item">
+      <strong>Category:</strong>
+      <%= @restaurant.category %>
+    </li>
+
+    <li class="list-group-item">
+      <strong>Phone Number:</strong>
+      <%= @restaurant.phone_number %>
+    </li>
+
+    <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item">
+     <strong>Reviews:</strong>
+     <%= review.content %>
+     <%= review.rating %>
+   </li>
+   <% end %>
+
+ </ul>
+
+ <%= link_to "Leave a review", new_restaurant_review_path(@restaurant.id) %>
+
+</div>
